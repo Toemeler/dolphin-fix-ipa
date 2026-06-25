@@ -1,0 +1,131 @@
+name: Build DolphiniOS 5.0.0b6 iOS IPA (controller fix)
+
+on:
+  workflow_dispatch:
+    inputs:
+      runner:
+        description: "Runner image (needs Xcode 26 / iOS 26 SDK)"
+        required: false
+        default: "macos-26"
+      extra_xcodebuild_args:
+        description: "Extra xcodebuild args (debug knob)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  build-ipa:
+    name: Build DolphiniOS (NJB) for iOS - controller fix
+    runs-on: ${{ inputs.runner }}
+    timeout-minutes: 350
+    steps:
+      - name: Select newest Xcode + toolchain info
+        run: |
+          set +e
+          NEWEST=$(ls -d /Applications/Xcode_*.app 2>/dev/null | sort -V | tail -1)
+          [ -n "$NEWEST" ] && sudo xcode-select -s "$NEWEST"
+          set -e
+          sw_vers; xcodebuild -version
+          echo "=== iphoneos SDKs ==="; xcodebuild -showsdks | grep -i iphoneos || true
+          cmake --version || true
+
+      - name: Preflight - require iOS 26 SDK (fast abort if too old)
+        run: |
+          SDKVER=$(xcodebuild -showsdks 2>/dev/null | sed -n 's/.*iphoneos\([0-9][0-9.]*\).*/\1/p' | sort -V | tail -1)
+          echo "Newest iphoneos SDK: ${SDKVER:-NONE}"
+          MAJOR=${SDKVER%%.*}
+          if [ -z "$MAJOR" ] || [ "$MAJOR" -lt 26 ]; then
+            echo "::error::iphoneos SDK ${SDKVER:-none} too old for DolphiniOS 5.0.0b6 (needs Xcode 26). Re-run with input runner=macos-26 or newer."
+            exit 78
+          fi
+
+      - name: Install ninja
+        run: brew install ninja || true
+
+      - name: Clone DolphiniOS v5.0.0b6 (with submodules)
+        run: |
+          set -o pipefail
+          git clone --depth 1 --branch v5.0.0b6 --recurse-submodules --shallow-submodules \
+            https://github.com/OatmealDome/dolphin-ios.git dolphin 2>&1 | tee clone.log | tail -n 25
+          echo "ios-cmake toolchain:"; ls -l dolphin/Externals/ios-cmake/ios.toolchain.cmake
+
+      - name: Apply controller-input fix (Info.plist)
+        run: |
+          echo 'IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJEb2xwaGluaU9TIDUuMC4wYjYgaU9TLTI3IGNvbnRyb2xsZXItaW5wdXQgZml4LgpGbGlwcyBHQ1N1cHBvcnRzQ29udHJvbGxlclVzZXJJbnRlcmFjdGlvbiArIEdDU3VwcG9ydHNHYW1lTW9kZSB0byA8ZmFsc2UvPiBpbgp0aGUgYXBwIEluZm8ucGxpc3Qgc28gdGhlIHN5c3RlbSBzdG9wcyBjYXB0dXJpbmcgdGhlIGdhbWVwYWQgZHVyaW5nIGVtdWxhdGlvbgphbmQgdGhlIGFwcCByZWNlaXZlcyByYXcgaW5wdXQuIFNlbGYtdmVyaWZ5aW5nOiBhYm9ydHMgdW5sZXNzIGVhY2gga2V5IG1hdGNoZXMKZXhhY3RseSBvbmNlLiIiIgppbXBvcnQgc3lzLCByZQpwID0gc3lzLmFyZ3ZbMV0KcyA9IG9wZW4ocCkucmVhZCgpCmRlZiBmbGlwKHRleHQsIGtleSk6CiAgICBwYXQgPSByZS5jb21waWxlKHInKDxrZXk+JyArIHJlLmVzY2FwZShrZXkpICsgcic8L2tleT5ccyo8KXRydWUoXHMqLz4pJykKICAgIG5ldywgbiA9IHBhdC5zdWJuKHInXDFmYWxzZVwyJywgdGV4dCkKICAgIGlmIG4gIT0gMToKICAgICAgICBzeXMuc3RkZXJyLndyaXRlKCJGQVRBTDoga2V5ICclcycgbWF0Y2hlZCAlZCB0aW1lcyAobmVlZCBleGFjdGx5IDEpXG4iICUgKGtleSwgbikpCiAgICAgICAgc3lzLmV4aXQoMSkKICAgIHByaW50KCJmbGlwcGVkICVzIC0+IGZhbHNlIiAlIGtleSkKICAgIHJldHVybiBuZXcKcyA9IGZsaXAocywgIkdDU3VwcG9ydHNDb250cm9sbGVyVXNlckludGVyYWN0aW9uIikKcyA9IGZsaXAocywgIkdDU3VwcG9ydHNHYW1lTW9kZSIpCm9wZW4ocCwgInciKS53cml0ZShzKQpwcmludCgiQ09OVFJPTExFUi1GSVggUEFUQ0ggQVBQTElFRCBPSyIpCg==' | base64 -d > /tmp/fix_controller_input.py
+          python3 /tmp/fix_controller_input.py "dolphin/Source/iOS/App/DolphiniOS/Info.plist"
+          echo "--- verify ---"
+          grep -nA1 "GCSupportsControllerUserInteraction\|GCSupportsGameMode" dolphin/Source/iOS/App/DolphiniOS/Info.plist
+
+      - name: Build DolphiniOS (NJB, unsigned)
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project dolphin/Source/iOS/App/DolphiniOS.xcodeproj \
+            -scheme "DiOS (NJB)" \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" CODE_SIGN_ENTITLEMENTS="" DEVELOPMENT_TEAM="" ENABLE_BITCODE=NO \
+            ${{ inputs.extra_xcodebuild_args }} \
+            build 2>&1 | tee build.log
+
+      - name: Package unsigned IPA
+        run: |
+          set -x
+          APP=$(find build/Build/Products -type d -name "DolphiniOS.app" 2>/dev/null | head -1)
+          [ -z "$APP" ] && APP=$(find build -type d -name "*.app" 2>/dev/null | grep -i "iphoneos" | head -1)
+          test -n "$APP" || { echo "::error::app bundle not found"; exit 1; }
+          echo "App bundle: $APP"
+          find "$APP" \( -name "*.o" -o -name "*.a" \) -print -delete || true
+          codesign --force --deep --sign - "$APP" || true
+          mkdir -p Payload && cp -R "$APP" Payload/
+          find Payload -type l ! -exec test -e {} \; -delete || true
+          zip -qr DolphiniOS-fix-ios.ipa Payload
+          ls -lh DolphiniOS-fix-ios.ipa
+
+      - name: Upload IPA artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: DolphiniOS-fix-ios-ipa
+          path: DolphiniOS-fix-ios.ipa
+          if-no-files-found: error
+
+      - name: Publish IPA as Release
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "build-${{ github.run_number }}" DolphiniOS-fix-ios.ipa \
+            --repo "${{ github.repository }}" \
+            --title "DolphiniOS 5.0.0b6 controller-fix build #${{ github.run_number }}" \
+            --notes "Unsigned DolphiniOS 5.0.0b6 with GCSupportsControllerUserInteraction + GCSupportsGameMode = false (iOS 27 controller-input fix). Sideload via SideStore/AltStore; test in Cached Interpreter mode (JIT not needed to verify input)."
+
+      - name: Commit condensed failure log (remote debugging)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          {
+            echo "== RUN ${{ github.run_id }} attempt ${{ github.run_attempt }} =="
+            echo "host: $(sw_vers -productVersion)  xcode: $(xcodebuild -version | tr '\n' ' ')"
+            echo; echo "=== iphoneos SDKs ==="; xcodebuild -showsdks 2>/dev/null | grep -i iphoneos
+            echo; echo "===== clone.log (tail) ====="; tail -n 30 clone.log 2>/dev/null
+            echo; echo "===== build.log ERROR lines ====="; grep -inE "error:|fatal error|ld: |Undefined symbol|No such file|clang: error|ninja: error|CMake Error" build.log 2>/dev/null | tail -n 200
+            echo; echo "===== build.log (tail) ====="; tail -n 250 build.log 2>/dev/null
+          } > failure-report.txt || true
+          gh api -X PUT "repos/${{ github.repository }}/contents/ci-logs/run-${{ github.run_number }}-a${{ github.run_attempt }}.txt" \
+            -f message="CI failure log (run ${{ github.run_id }})" \
+            -f content="$(base64 -i failure-report.txt | tr -d '\n')" || true
+
+      - name: Upload full debug logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-logs
+          path: |
+            build.log
+            clone.log
+          if-no-files-found: ignore

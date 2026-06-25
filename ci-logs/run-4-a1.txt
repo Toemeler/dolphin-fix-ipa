@@ -1,0 +1,299 @@
+== RUN 28181249684 attempt 1 ==
+host: 26.4  xcode: Xcode 26.6 Build version 17F113 
+
+===== error / failure lines =====
+5364:Command PhaseScriptExecution failed with a nonzero exit code
+5371:** BUILD FAILED **
+
+===== context around first failure =====
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h:3:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics.h:3:9: warning: double-quoted include "FIREventNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    3 | #import "FIREventNames.h"
+      |         ^~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIREventNames.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics.h:4:9: warning: double-quoted include "FIRParameterNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    4 | #import "FIRParameterNames.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRParameterNames.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics.h:5:9: warning: double-quoted include "FIRUserPropertyNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    5 | #import "FIRUserPropertyNames.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRUserPropertyNames.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/BootNotice/Analytics/AnalyticsNoticeViewController.mm:6:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:2:9: warning: double-quoted include "FIRAnalytics+Consent.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    2 | #import "FIRAnalytics+Consent.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics+Consent.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/BootNotice/Analytics/AnalyticsNoticeViewController.mm:6:
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:2:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics+Consent.h:3:9: warning: double-quoted include "FIRAnalytics.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    3 | #import "FIRAnalytics.h"
+      |         ^~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/BootNotice/Analytics/AnalyticsNoticeViewController.mm:6:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:3:9: warning: double-quoted include "FIRAnalytics+OnDevice.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    3 | #import "FIRAnalytics+OnDevice.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics+OnDevice.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/BootNotice/Analytics/AnalyticsNoticeViewController.mm:6:
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:3:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics+OnDevice.h:3:9: warning: double-quoted include "FIRAnalytics.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    3 | #import "FIRAnalytics.h"
+      |         ^~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/BootNotice/Analytics/AnalyticsNoticeViewController.mm:6:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:4:9: warning: double-quoted include "FIRAnalytics.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    4 | #import "FIRAnalytics.h"
+      |         ^~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:5:9: warning: double-quoted include "FIREventNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    5 | #import "FIREventNames.h"
+      |         ^~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIREventNames.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:6:9: warning: double-quoted include "FIRParameterNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    6 | #import "FIRParameterNames.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRParameterNames.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:7:9: warning: double-quoted include "FIRUserPropertyNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    7 | #import "FIRUserPropertyNames.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRUserPropertyNames.h>
+13 warnings generated.
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Jit/JitManager+AltServer.m:10:24: warning: duplicate definition of category 'AltServer' on interface 'JitManager' [-Wobjc-duplicate-category-definition]
+   10 | @interface JitManager (AltServer)
+      |                        ^
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Jit/JitManager+AltServer.m:4:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Jit/JitManager+AltServer.h:8:12: note: previous definition is here
+    8 | @interface JitManager (AltServer)
+      |            ^
+1 warning generated.
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/DolphiniOS/UI/Import/ImportFileManager.m:4:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/DolphiniOS/UI/Import/ImportFileManager.h:8:9: warning: pointer is missing a nullability type specifier (_Nonnull, _Nullable, or _Null_unspecified) [-Wnullability-completeness]
+    8 | NSString* const DOLImportFileFinishedNotification = @"DOLImportFileFinishedNotification";
+      |         ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/DolphiniOS/UI/Import/ImportFileManager.h:8:9: note: insert '_Nullable' if the pointer may be null
+    8 | NSString* const DOLImportFileFinishedNotification = @"DOLImportFileFinishedNotification";
+      |         ^
+      |           _Nullable
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/DolphiniOS/UI/Import/ImportFileManager.h:8:9: note: insert '_Nonnull' if the pointer should never be null
+    8 | NSString* const DOLImportFileFinishedNotification = @"DOLImportFileFinishedNotification";
+      |         ^
+      |           _Nonnull
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/DolphiniOS/UI/Import/ImportFileManager.m:8:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/SoftwareList/GameFileCacheManager.h:27:71: warning: a block declaration without a prototype is deprecated  [-Wstrict-prototypes]
+   27 | - (void)rescanAndFetchMetadataWithCompletionHandler:(nullable void (^)())completion_handler;
+      |                                                                       ^
+      |                                                                        void
+2 warnings generated.
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Project/Scripts/UpdateStoryboardStrings.sh: line 9: bartycrouch: command not found
+Command PhaseScriptExecution failed with a nonzero exit code
+note: Using codesigning identity override: 
+warning: Run script build phase 'Run Script' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DolphiniOS' from project 'DolphiniOS')
+warning: Run script build phase 'Update Storyboard Strings' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DolphiniOS' from project 'DolphiniOS')
+note: Run script build phase 'Build Dolphin Core' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'DolphiniOS' from project 'DolphiniOS')
+warning: Run script build phase 'Upload dSYM' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DolphiniOS' from project 'DolphiniOS')
+warning: Run script build phase 'Transfer Core Strings to Storyboard Strings' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DolphiniOS' from project 'DolphiniOS')
+** BUILD FAILED **
+
+
+===== build.log (last 200) =====
+      |         <FirebaseAnalytics/FIRAnalytics.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/Emulation/EmulationViewController.mm:6:
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:1:
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h:3:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics.h:3:9: warning: double-quoted include "FIREventNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    3 | #import "FIREventNames.h"
+      |         ^~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIREventNames.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics.h:4:9: warning: double-quoted include "FIRParameterNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    4 | #import "FIRParameterNames.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRParameterNames.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics.h:5:9: warning: double-quoted include "FIRUserPropertyNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    5 | #import "FIRUserPropertyNames.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRUserPropertyNames.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/Emulation/EmulationViewController.mm:6:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:2:9: warning: double-quoted include "FIRAnalytics+Consent.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    2 | #import "FIRAnalytics+Consent.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics+Consent.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/Emulation/EmulationViewController.mm:6:
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:2:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics+Consent.h:3:9: warning: double-quoted include "FIRAnalytics.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    3 | #import "FIRAnalytics.h"
+      |         ^~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/Emulation/EmulationViewController.mm:6:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:3:9: warning: double-quoted include "FIRAnalytics+OnDevice.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    3 | #import "FIRAnalytics+OnDevice.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics+OnDevice.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/Emulation/EmulationViewController.mm:6:
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:3:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics+OnDevice.h:3:9: warning: double-quoted include "FIRAnalytics.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    3 | #import "FIRAnalytics.h"
+      |         ^~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/Emulation/EmulationViewController.mm:6:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:4:9: warning: double-quoted include "FIRAnalytics.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    4 | #import "FIRAnalytics.h"
+      |         ^~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:5:9: warning: double-quoted include "FIREventNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    5 | #import "FIREventNames.h"
+      |         ^~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIREventNames.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:6:9: warning: double-quoted include "FIRParameterNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    6 | #import "FIRParameterNames.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRParameterNames.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:7:9: warning: double-quoted include "FIRUserPropertyNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    7 | #import "FIRUserPropertyNames.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRUserPropertyNames.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/Emulation/EmulationViewController.mm:18:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Emulation/EmulationCoordinator.h:9:9: warning: pointer is missing a nullability type specifier (_Nonnull, _Nullable, or _Null_unspecified) [-Wnullability-completeness]
+    9 | NSString* const DOLEmulationDidStartNotification = @"DOLEmulationDidStartNotification";
+      |         ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Emulation/EmulationCoordinator.h:9:9: note: insert '_Nullable' if the pointer may be null
+    9 | NSString* const DOLEmulationDidStartNotification = @"DOLEmulationDidStartNotification";
+      |         ^
+      |           _Nullable
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Emulation/EmulationCoordinator.h:9:9: note: insert '_Nonnull' if the pointer should never be null
+    9 | NSString* const DOLEmulationDidStartNotification = @"DOLEmulationDidStartNotification";
+      |         ^
+      |           _Nonnull
+14 warnings generated.
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Emulation/EmulationCoordinator.mm:4:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Emulation/EmulationCoordinator.h:9:9: warning: pointer is missing a nullability type specifier (_Nonnull, _Nullable, or _Null_unspecified) [-Wnullability-completeness]
+    9 | NSString* const DOLEmulationDidStartNotification = @"DOLEmulationDidStartNotification";
+      |         ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Emulation/EmulationCoordinator.h:9:9: note: insert '_Nullable' if the pointer may be null
+    9 | NSString* const DOLEmulationDidStartNotification = @"DOLEmulationDidStartNotification";
+      |         ^
+      |           _Nullable
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Emulation/EmulationCoordinator.h:9:9: note: insert '_Nonnull' if the pointer should never be null
+    9 | NSString* const DOLEmulationDidStartNotification = @"DOLEmulationDidStartNotification";
+      |         ^
+      |           _Nonnull
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Emulation/EmulationCoordinator.mm:19:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/Core/VideoCommon/Present.h:95:35: warning: implicit conversion loses integer precision: 'const u64' (aka 'const unsigned long long') to 'int' [-Wshorten-64-to-32]
+   95 |   int FrameCount() const { return m_frame_count; }
+      |                            ~~~~~~ ^~~~~~~~~~~~~
+2 warnings generated.
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Services/DolphinCoreService.mm:24:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Emulation/EmulationCoordinator.h:9:9: warning: pointer is missing a nullability type specifier (_Nonnull, _Nullable, or _Null_unspecified) [-Wnullability-completeness]
+    9 | NSString* const DOLEmulationDidStartNotification = @"DOLEmulationDidStartNotification";
+      |         ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Emulation/EmulationCoordinator.h:9:9: note: insert '_Nullable' if the pointer may be null
+    9 | NSString* const DOLEmulationDidStartNotification = @"DOLEmulationDidStartNotification";
+      |         ^
+      |           _Nullable
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Emulation/EmulationCoordinator.h:9:9: note: insert '_Nonnull' if the pointer should never be null
+    9 | NSString* const DOLEmulationDidStartNotification = @"DOLEmulationDidStartNotification";
+      |         ^
+      |           _Nonnull
+1 warning generated.
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/BootNotice/Analytics/AnalyticsNoticeViewController.mm:6:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:1:9: warning: double-quoted include "FIRAnalytics+AppDelegate.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    1 | #import "FIRAnalytics+AppDelegate.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics+AppDelegate.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/BootNotice/Analytics/AnalyticsNoticeViewController.mm:6:
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:1:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h:3:9: warning: double-quoted include "FIRAnalytics.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    3 | #import "FIRAnalytics.h"
+      |         ^~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/BootNotice/Analytics/AnalyticsNoticeViewController.mm:6:
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:1:
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h:3:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics.h:3:9: warning: double-quoted include "FIREventNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    3 | #import "FIREventNames.h"
+      |         ^~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIREventNames.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics.h:4:9: warning: double-quoted include "FIRParameterNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    4 | #import "FIRParameterNames.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRParameterNames.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics.h:5:9: warning: double-quoted include "FIRUserPropertyNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    5 | #import "FIRUserPropertyNames.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRUserPropertyNames.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/BootNotice/Analytics/AnalyticsNoticeViewController.mm:6:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:2:9: warning: double-quoted include "FIRAnalytics+Consent.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    2 | #import "FIRAnalytics+Consent.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics+Consent.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/BootNotice/Analytics/AnalyticsNoticeViewController.mm:6:
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:2:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics+Consent.h:3:9: warning: double-quoted include "FIRAnalytics.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    3 | #import "FIRAnalytics.h"
+      |         ^~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/BootNotice/Analytics/AnalyticsNoticeViewController.mm:6:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:3:9: warning: double-quoted include "FIRAnalytics+OnDevice.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    3 | #import "FIRAnalytics+OnDevice.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics+OnDevice.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/BootNotice/Analytics/AnalyticsNoticeViewController.mm:6:
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:3:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FIRAnalytics+OnDevice.h:3:9: warning: double-quoted include "FIRAnalytics.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    3 | #import "FIRAnalytics.h"
+      |         ^~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics.h>
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/BootNotice/Analytics/AnalyticsNoticeViewController.mm:6:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:4:9: warning: double-quoted include "FIRAnalytics.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    4 | #import "FIRAnalytics.h"
+      |         ^~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRAnalytics.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:5:9: warning: double-quoted include "FIREventNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    5 | #import "FIREventNames.h"
+      |         ^~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIREventNames.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:6:9: warning: double-quoted include "FIRParameterNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    6 | #import "FIRParameterNames.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRParameterNames.h>
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Products/Release (Non-Jailbroken)-iphoneos/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h:7:9: warning: double-quoted include "FIRUserPropertyNames.h" in framework header, expected angle-bracketed instead [-Wquoted-include-in-framework-header]
+    7 | #import "FIRUserPropertyNames.h"
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+      |         <FirebaseAnalytics/FIRUserPropertyNames.h>
+13 warnings generated.
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Jit/JitManager+AltServer.m:10:24: warning: duplicate definition of category 'AltServer' on interface 'JitManager' [-Wobjc-duplicate-category-definition]
+   10 | @interface JitManager (AltServer)
+      |                        ^
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Jit/JitManager+AltServer.m:4:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/Jit/JitManager+AltServer.h:8:12: note: previous definition is here
+    8 | @interface JitManager (AltServer)
+      |            ^
+1 warning generated.
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/DolphiniOS/UI/Import/ImportFileManager.m:4:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/DolphiniOS/UI/Import/ImportFileManager.h:8:9: warning: pointer is missing a nullability type specifier (_Nonnull, _Nullable, or _Null_unspecified) [-Wnullability-completeness]
+    8 | NSString* const DOLImportFileFinishedNotification = @"DOLImportFileFinishedNotification";
+      |         ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/DolphiniOS/UI/Import/ImportFileManager.h:8:9: note: insert '_Nullable' if the pointer may be null
+    8 | NSString* const DOLImportFileFinishedNotification = @"DOLImportFileFinishedNotification";
+      |         ^
+      |           _Nullable
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/DolphiniOS/UI/Import/ImportFileManager.h:8:9: note: insert '_Nonnull' if the pointer should never be null
+    8 | NSString* const DOLImportFileFinishedNotification = @"DOLImportFileFinishedNotification";
+      |         ^
+      |           _Nonnull
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/DolphiniOS/UI/Import/ImportFileManager.m:8:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Common/UI/SoftwareList/GameFileCacheManager.h:27:71: warning: a block declaration without a prototype is deprecated  [-Wstrict-prototypes]
+   27 | - (void)rescanAndFetchMetadataWithCompletionHandler:(nullable void (^)())completion_handler;
+      |                                                                       ^
+      |                                                                        void
+2 warnings generated.
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/iOS/App/Project/Scripts/UpdateStoryboardStrings.sh: line 9: bartycrouch: command not found
+Command PhaseScriptExecution failed with a nonzero exit code
+note: Using codesigning identity override: 
+warning: Run script build phase 'Run Script' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DolphiniOS' from project 'DolphiniOS')
+warning: Run script build phase 'Update Storyboard Strings' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DolphiniOS' from project 'DolphiniOS')
+note: Run script build phase 'Build Dolphin Core' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'DolphiniOS' from project 'DolphiniOS')
+warning: Run script build phase 'Upload dSYM' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DolphiniOS' from project 'DolphiniOS')
+warning: Run script build phase 'Transfer Core Strings to Storyboard Strings' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DolphiniOS' from project 'DolphiniOS')
+** BUILD FAILED **
+

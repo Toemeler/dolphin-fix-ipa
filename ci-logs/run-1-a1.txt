@@ -1,0 +1,293 @@
+== RUN 28178236957 attempt 1 ==
+host: 26.4  xcode: Xcode 26.6 Build version 17F113 
+
+=== iphoneos SDKs ===
+	iOS 26.5                      	-sdk iphoneos26.5
+
+===== clone.log (tail) =====
+From https://github.com/mgba-emu/mgba
+ * branch            8739b22fbc90fdf0b4f6612ef9c0520f0ba44a51 -> FETCH_HEAD
+Submodule path 'Externals/mGBA/mgba': checked out '8739b22fbc90fdf0b4f6612ef9c0520f0ba44a51'
+From https://github.com/miniupnp/miniupnp
+ * branch            bf4215a7574f88aa55859db9db00e3ae58cf42d6 -> FETCH_HEAD
+Submodule path 'Externals/miniupnpc/miniupnp': checked out 'bf4215a7574f88aa55859db9db00e3ae58cf42d6'
+From https://github.com/zlib-ng/minizip-ng
+ * branch            55db144e03027b43263e5ebcb599bf0878ba58de -> FETCH_HEAD
+Submodule path 'Externals/minizip-ng/minizip-ng': checked out '55db144e03027b43263e5ebcb599bf0878ba58de'
+From https://github.com/RetroAchievements/rcheevos
+ * branch            b443902b1cdfee5a66b09fec20a94d2d2afaf2ec -> FETCH_HEAD
+Submodule path 'Externals/rcheevos/rcheevos': checked out 'b443902b1cdfee5a66b09fec20a94d2d2afaf2ec'
+From https://github.com/KhronosGroup/SPIRV-Cross
+ * branch            ebe2aa0cd80f5eb5cd8a605da604cacf72205f3b -> FETCH_HEAD
+Submodule path 'Externals/spirv_cross/SPIRV-Cross': checked out 'ebe2aa0cd80f5eb5cd8a605da604cacf72205f3b'
+From https://github.com/syoyo/tinygltf
+ * branch            c5641f2c22d117da7971504591a8f6a41ece488b -> FETCH_HEAD
+Submodule path 'Externals/tinygltf/tinygltf': checked out 'c5641f2c22d117da7971504591a8f6a41ece488b'
+From https://github.com/e-dant/watcher
+ * branch            b03bdcfc11549df595b77239cefe2643943a3e2f -> FETCH_HEAD
+Submodule path 'Externals/watcher/watcher': checked out 'b03bdcfc11549df595b77239cefe2643943a3e2f'
+From https://github.com/Cyan4973/xxHash
+ * branch            e626a72bc2321cd320e953a0ccf1584cad60f363 -> FETCH_HEAD
+Submodule path 'Externals/xxhash/xxHash': checked out 'e626a72bc2321cd320e953a0ccf1584cad60f363'
+From https://github.com/zlib-ng/zlib-ng
+ * branch            ce01b1e41da298334f8214389cc9369540a7560f -> FETCH_HEAD
+Submodule path 'Externals/zlib-ng/zlib-ng': checked out 'ce01b1e41da298334f8214389cc9369540a7560f'
+From https://github.com/facebook/zstd
+ * branch            f8745da6ff1ad1e7bab384bd1f9d742439278e99 -> FETCH_HEAD
+Submodule path 'Externals/zstd/zstd': checked out 'f8745da6ff1ad1e7bab384bd1f9d742439278e99'
+
+===== build.log ERROR lines =====
+116:--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+10550:/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/chrono.h:1159:43: error: call to consteval function 'fmt::basic_format_string<char, double, int &>::basic_format_string<FMT_COMPILE_STRING, 0>' is not a constant expression
+
+===== build.log (tail) =====
+[262/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/openldap.c.o
+[263/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/parsedate.c.o
+[264/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/pingpong.c.o
+[265/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/pop3.c.o
+[266/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/psl.c.o
+[267/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/rand.c.o
+[268/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/rename.c.o
+[269/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/progress.c.o
+[270/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/rtsp.c.o
+[271/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/request.c.o
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/curl/curl/lib/request.c:319:31: warning: variable 'tmp' is uninitialized when passed as a const pointer argument here [-Wuninitialized-const-pointer]
+  319 |     result = xfer_send(data, &tmp, 0, 0, &nwritten);
+      |                               ^~~
+1 warning generated.
+[272/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/select.c.o
+[273/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/multi.c.o
+[274/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/sha256.c.o
+[275/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/slist.c.o
+[276/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/share.c.o
+[277/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/mprintf.c.o
+[278/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/sendf.c.o
+[279/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/smb.c.o
+[280/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/smtp.c.o
+[281/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/setopt.c.o
+[282/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/socketpair.c.o
+[283/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/socks_sspi.c.o
+[284/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/socks_gssapi.c.o
+[285/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/splay.c.o
+[286/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/speedcheck.c.o
+[287/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/strdup.c.o
+[288/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/strtok.c.o
+[289/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/strcase.c.o
+[290/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/strtoofft.c.o
+[291/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/system_win32.c.o
+[292/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/telnet.c.o
+[293/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/tftp.c.o
+[294/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/timediff.c.o
+[295/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/strerror.c.o
+[296/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/timeval.c.o
+[297/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/socks.c.o
+[298/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/version.c.o
+[299/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/version_win32.c.o
+[300/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/warnless.c.o
+[301/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/transfer.c.o
+[302/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vauth/cleartext.c.o
+[303/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vauth/cram.c.o
+[304/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vauth/digest_sspi.c.o
+[305/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/ws.c.o
+[306/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vauth/digest.c.o
+[307/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vauth/gsasl.c.o
+[308/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vauth/krb5_gssapi.c.o
+[309/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vauth/krb5_sspi.c.o
+[310/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vauth/ntlm_sspi.c.o
+[311/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vauth/oauth2.c.o
+[312/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/urlapi.c.o
+[313/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vauth/spnego_sspi.c.o
+[314/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vauth/spnego_gssapi.c.o
+[315/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/bearssl.c.o
+[316/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vauth/vauth.c.o
+[317/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/gtls.c.o
+[318/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vauth/ntlm.c.o
+[319/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/hostcheck.c.o
+[320/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/keylog.c.o
+[321/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/openssl.c.o
+[322/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/mbedtls_threadlock.c.o
+[323/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/url.c.o
+[324/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/cipher_suite.c.o
+[325/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/rustls.c.o
+[326/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/schannel.c.o
+[327/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/sectransp.c.o
+[328/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/schannel_verify.c.o
+[329/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/wolfssl.c.o
+[330/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vquic/curl_ngtcp2.c.o
+[331/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vquic/curl_msh3.c.o
+[332/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/mbedtls.c.o
+[333/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vquic/curl_quiche.c.o
+[334/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vquic/curl_osslq.c.o
+[335/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vquic/vquic-tls.c.o
+[336/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vquic/vquic.c.o
+[337/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vssh/libssh.c.o
+[338/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vssh/libssh2.c.o
+[339/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vssh/curl_path.c.o
+[340/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vssh/wolfssh.c.o
+[341/1235] Building C object Externals/libiconv-1.14/CMakeFiles/iconv.dir/lib/relocatable.c.o
+[342/1235] Building C object Externals/libiconv-1.14/CMakeFiles/iconv.dir/libcharset/lib/localcharset.c.o
+[343/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/x509asn1.c.o
+[344/1235] Building C object Externals/FatFs/CMakeFiles/FatFs.dir/ffunicode.c.o
+[345/1235] Linking C static library Externals/lwmem/liblwmem.a
+[346/1235] Linking CXX static library Externals/fmt/fmt/libfmt.a
+[347/1235] Building C object Externals/curl/curl/lib/CMakeFiles/libcurl_static.dir/vtls/vtls.c.o
+[348/1235] Building C object Externals/FatFs/CMakeFiles/FatFs.dir/ff.c.o
+[349/1235] Building CXX object Externals/imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.o
+[350/1235] Building C object Externals/libiconv-1.14/CMakeFiles/iconv.dir/lib/iconv.c.o
+[351/1235] Linking C static library Externals/enet/libenet.a
+[352/1235] Linking C static library Externals/minizip-ng/libminizip.a
+[353/1235] Linking C static library Externals/libspng/libspng.a
+[354/1235] Building CXX object Externals/FreeSurround/CMakeFiles/FreeSurround.dir/source/ChannelMaps.cpp.o
+[355/1235] Building CXX object Externals/FreeSurround/CMakeFiles/FreeSurround.dir/source/KissFFT.cpp.o
+[356/1235] Building CXX object Externals/FreeSurround/CMakeFiles/FreeSurround.dir/source/KissFFTR.cpp.o
+[357/1235] Building CXX object Externals/imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.o
+[358/1235] Linking CXX static library Externals/SFML/libsfml-network.a
+[359/1235] Linking C static library Externals/curl/curl/lib/libcurl.a
+[360/1235] Linking C static library Externals/libiconv-1.14/libiconv.a
+[361/1235] Linking C static library Externals/FatFs/libFatFs.a
+[362/1235] Building CXX object Externals/FreeSurround/CMakeFiles/FreeSurround.dir/source/FreeSurroundDecoder.cpp.o
+[363/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Assembler/AssemblerShared.cpp.o
+[364/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Analytics.cpp.o
+[365/1235] Building CXX object Externals/imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.o
+[366/1235] Building CXX object Externals/imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.o
+[367/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Assembler/GekkoAssembler.cpp.o
+[368/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Assembler/GekkoIRGen.cpp.o
+[369/1235] Building CXX object Externals/imgui/CMakeFiles/imgui.dir/imgui.cpp.o
+[370/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Assembler/GekkoLexer.cpp.o
+[371/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Assembler/AssemblerTables.cpp.o
+[372/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Assembler/GekkoParser.cpp.o
+[373/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/CommonFuncs.cpp.o
+[374/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/ColorUtil.cpp.o
+[375/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Config/ConfigInfo.cpp.o
+[376/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Config/Layer.cpp.o
+[377/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Config/Config.cpp.o
+[378/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Crypto/bn.cpp.o
+[379/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Crypto/AES.cpp.o
+[380/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Crypto/ec.cpp.o
+[381/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Crypto/HMAC.cpp.o
+[382/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Debug/MemoryPatches.cpp.o
+[383/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Crypto/SHA1.cpp.o
+[384/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Debug/Watches.cpp.o
+[385/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/DynamicLibrary.cpp.o
+[386/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/ENet.cpp.o
+[387/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/FileSearch.cpp.o
+[388/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/FloatUtils.cpp.o
+[389/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/FilesystemWatcher.cpp.o
+[390/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/FatFsUtil.cpp.o
+[391/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Hash.cpp.o
+[392/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/FileUtil.cpp.o
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/Core/Common/FileUtil.cpp:85:43: warning: unused variable 's_is_translocated_url' [-Wunused-variable]
+   85 | static DolSecTranslocateIsTranslocatedURL s_is_translocated_url;
+      |                                           ^~~~~~~~~~~~~~~~~~~~~
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/Core/Common/FileUtil.cpp:86:50: warning: unused variable 's_create_orig_path' [-Wunused-variable]
+   86 | static DolSecTranslocateCreateOriginalPathForURL s_create_orig_path;
+      |                                                  ^~~~~~~~~~~~~~~~~~
+2 warnings generated.
+[393/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/HostDisassembler.cpp.o
+[394/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/GekkoDisassembler.cpp.o
+[395/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/HttpRequest.cpp.o
+[396/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Image.cpp.o
+[397/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/IniFile.cpp.o
+[398/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/IOFile.cpp.o
+[399/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/JitRegister.cpp.o
+[400/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Logging/LogManager.cpp.o
+FAILED: [code=1] Source/Core/Common/CMakeFiles/common.dir/Logging/LogManager.cpp.o 
+/Applications/Xcode_26.6_Release_Candidate_2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ --target=aarch64-apple-ios14.0 -DCURL_STATICLIB -DDATA_DIR=\"/usr/local/share/dolphin-emu/\" -DFMT_EXCEPTIONS=0 -DHAS_VULKAN -DIPHONEOS -DSFML_STATIC -DSPNG_STATIC -DUSE_MEMORYWATCHER=1 -DUSE_PIPES=1 -D_ARCH_64=1 -D_DEFAULT_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_M_ARM_64=1 -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/Core -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/ed25519 -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/picojson -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/build-iphoneos-Release/Source/Core -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/enet/enet/include -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/mbedtls/include -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/minizip-ng/minizip-ng -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/minizip-ng/minizip-ng/compat -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/build-iphoneos-Release/Externals/zlib-ng/zlib-ng -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/zlib-ng/zlib-ng -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/SFML/SFML/include -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/curl/curl/include -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/FatFs -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/libiconv-1.14/include -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/libspng/libspng/spng -I/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/lwmem/src/include -F/Applications/Xcode_26.6_Release_Candidate_2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk/System/Library/Frameworks -isystem /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/watcher/watcher/include -target aarch64-apple-ios14.0   -fvisibility=default -fobjc-abi-version=2 -fobjc-arc -fPIC  -target aarch64-apple-ios14.0   -fvisibility=default -fobjc-abi-version=2 -fobjc-arc -fPIC -DNDEBUG -O3  -std=c++20 -arch arm64 -isysroot /Applications/Xcode_26.6_Release_Candidate_2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -miphoneos-version-min=14.0 -march=armv8-a+crc -fdiagnostics-color -fno-strict-aliasing -fno-exceptions -fomit-frame-pointer -Wall -Wtype-limits -Wsign-compare -Wignored-qualifiers -Wuninitialized -Wshadow -Wshadow-field-in-constructor -Winit-self -Wmissing-declarations -Wmissing-variable-declarations -Werror=format -MD -MT Source/Core/Common/CMakeFiles/common.dir/Logging/LogManager.cpp.o -MF Source/Core/Common/CMakeFiles/common.dir/Logging/LogManager.cpp.o.d -o Source/Core/Common/CMakeFiles/common.dir/Logging/LogManager.cpp.o -c /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/Core/Common/Logging/LogManager.cpp
+In file included from /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/Core/Common/Logging/LogManager.cpp:16:
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/chrono.h:1159:43: error: call to consteval function 'fmt::basic_format_string<char, double, int &>::basic_format_string<FMT_COMPILE_STRING, 0>' is not a constant expression
+ 1159 |   fmt::format_to(std::back_inserter(buf), FMT_STRING("{:.{}f}"),
+      |                                           ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/format.h:1848:23: note: expanded from macro 'FMT_STRING'
+ 1848 | #define FMT_STRING(s) FMT_STRING_IMPL(s, fmt::detail::compile_string, )
+      |                       ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/format.h:1825:3: note: expanded from macro 'FMT_STRING_IMPL'
+ 1825 |   [] {                                                                        \
+      |   ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/chrono.h:1569:11: note: in instantiation of function template specialization 'fmt::detail::write_floating_seconds<std::chrono::duration<long long>>' requested here
+ 1569 |           write_floating_seconds(buf, *subsecs_);
+      |           ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/chrono.h:790:15: note: in instantiation of member function 'fmt::detail::tm_writer<std::back_insert_iterator<fmt::basic_memory_buffer<char>>, char>::on_second' requested here
+  790 |       handler.on_second(numeric_system::standard, pad);
+      |               ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/chrono.h:2137:40: note: in instantiation of function template specialization 'fmt::formatter<tm>::do_format<fmt::basic_format_context<fmt::appender, char>, std::chrono::duration<long long>>' requested here
+ 2137 |       return formatter<std::tm, Char>::do_format(gmtime(val), ctx, &subsecs);
+      |                                        ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/core.h:1328:22: note: in instantiation of function template specialization 'fmt::formatter<std::chrono::time_point<std::chrono::system_clock, std::chrono::duration<long long>>>::format<fmt::basic_format_context<fmt::appender, char>>' requested here
+ 1328 |     ctx.advance_to(f.format(*static_cast<qualified_type*>(arg), ctx));
+      |                      ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/core.h:1310:21: note: in instantiation of function template specialization 'fmt::detail::value<fmt::basic_format_context<fmt::appender, char>>::format_custom_arg<std::chrono::time_point<std::chrono::system_clock, std::chrono::duration<long long>>, fmt::formatter<std::chrono::time_point<std::chrono::system_clock, std::chrono::duration<long long>>>>' requested here
+ 1310 |     custom.format = format_custom_arg<
+      |                     ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Source/Core/Common/Logging/LogManager.cpp:214:15: note: in instantiation of function template specialization 'fmt::format<const std::chrono::time_point<std::chrono::system_clock, std::chrono::duration<long long>> &, long long>' requested here
+  214 |   return fmt::format("{:%M:%S}:{:03}", now_s, (now_ms - now_s).count());
+      |               ^
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/core.h:704:54: note: subexpression not valid in a constant expression
+  704 |     format_str_.remove_prefix(detail::to_unsigned(it - begin()));
+      |                                                   ~~~^~~~~~~~~
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/core.h:2682:5: note: in call to 'this->context_.advance_to(&"{:.{}f}"[2])'
+ 2682 |     context_.advance_to(begin);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/core.h:2512:15: note: in call to 'handler.on_format_specs(0, &"{:.{}f}"[2], &"{:.{}f}"[7])'
+ 2512 |       begin = handler.on_format_specs(adapter.arg_id, begin + 1, end);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/core.h:2534:21: note: in call to 'parse_replacement_field<char, fmt::detail::format_string_checker<char, double, int> &>(&"{:.{}f}"[1], &"{:.{}f}"[7], checker(s))'
+ 2534 |         begin = p = parse_replacement_field(p - 1, end, handler);
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/core.h:2787:7: note: in call to 'parse_format_string<true, char, fmt::detail::format_string_checker<char, double, int>>({&"{:.{}f}"[0], 7}, checker(s))'
+ 2787 |       detail::parse_format_string<true>(str_, checker(s));
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/chrono.h:1159:43: note: in call to 'basic_format_string<FMT_COMPILE_STRING, 0>([] {
+    struct FMT_COMPILE_STRING : fmt::detail::compile_string {
+        using char_type [[maybe_unused]] = fmt::remove_cvref_t<decltype("{:.{}f}"[0])>;
+    };
+    return FMT_COMPILE_STRING();
+}())'
+ 1159 |   fmt::format_to(std::back_inserter(buf), FMT_STRING("{:.{}f}"),
+      |                                           ^~~~~~~~~~~~~~~~~~~~~
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/format.h:1848:23: note: expanded from macro 'FMT_STRING'
+ 1848 | #define FMT_STRING(s) FMT_STRING_IMPL(s, fmt::detail::compile_string, )
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/dolphin/Externals/fmt/fmt/include/fmt/format.h:1825:3: note: expanded from macro 'FMT_STRING_IMPL'
+ 1825 |   [] {                                                                        \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1826 |     /* Use the hidden visibility as a workaround for a GCC bug (#1973). */    \
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1827 |     /* Use a macro-like name to avoid shadowing warnings. */                  \
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1828 |     struct FMT_VISIBILITY("hidden") FMT_COMPILE_STRING : base {               \
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1829 |       using char_type FMT_MAYBE_UNUSED = fmt::remove_cvref_t<decltype(s[0])>; \
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1830 |       FMT_MAYBE_UNUSED FMT_CONSTEXPR explicit                                 \
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1831 |       operator fmt::basic_string_view<char_type>() const {                    \
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1832 |         return fmt::detail_exported::compile_string_to_view<char_type>(s);    \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1833 |       }                                                                       \
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1834 |     };                                                                        \
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1835 |     return FMT_COMPILE_STRING();                                              \
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1836 |   }()
+      |   ~~~
+1 error generated.
+[401/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/JsonUtil.cpp.o
+[402/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/Matrix.cpp.o
+[403/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/MemoryUtil.cpp.o
+[404/1235] Building CXX object Source/Core/Common/CMakeFiles/common.dir/MsgHandler.cpp.o
+ninja: build stopped: subcommand failed.
+
+warning: Run script build phase 'Run Script' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DolphiniOS' from project 'DolphiniOS')
+note: Run script build phase 'Build Dolphin Core' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'DolphiniOS' from project 'DolphiniOS')
+warning: Run script build phase 'Update Storyboard Strings' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DolphiniOS' from project 'DolphiniOS')
+warning: Run script build phase 'Transfer Core Strings to Storyboard Strings' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DolphiniOS' from project 'DolphiniOS')
+warning: Run script build phase 'Upload dSYM' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DolphiniOS' from project 'DolphiniOS')
+** BUILD FAILED **
+
+
+The following build commands failed:
+	PhaseScriptExecution Build\ Dolphin\ Core /Users/runner/work/dolphin-fix-ipa/dolphin-fix-ipa/build/Build/Intermediates.noindex/DolphiniOS.build/Release\ (Non-Jailbroken)-iphoneos/DolphiniOS.build/Script-B9476B2327F23920009C0A4B.sh (in target 'DolphiniOS' from project 'DolphiniOS')
+	Building project DolphiniOS with scheme DiOS (NJB) and configuration Release
+(2 failures)

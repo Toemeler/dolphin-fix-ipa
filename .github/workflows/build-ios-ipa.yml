@@ -77,7 +77,8 @@ jobs:
             -configuration Release \
             -sdk iphoneos \
             -derivedDataPath build \
-            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" CODE_SIGN_ENTITLEMENTS="" DEVELOPMENT_TEAM="" ENABLE_BITCODE=NO \
+            -quiet \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" CODE_SIGN_ENTITLEMENTS="" DEVELOPMENT_TEAM="" ENABLE_BITCODE=NO DEBUG_INFORMATION_FORMAT=dwarf COMPILER_INDEX_STORE_ENABLE=NO \
             ${{ inputs.extra_xcodebuild_args }} \
             build 2>&1 | tee build.log
 
@@ -121,10 +122,12 @@ jobs:
           {
             echo "== RUN ${{ github.run_id }} attempt ${{ github.run_attempt }} =="
             echo "host: $(sw_vers -productVersion)  xcode: $(xcodebuild -version | tr '\n' ' ')"
-            echo; echo "=== iphoneos SDKs ==="; xcodebuild -showsdks 2>/dev/null | grep -i iphoneos
-            echo; echo "===== clone.log (tail) ====="; tail -n 30 clone.log 2>/dev/null
-            echo; echo "===== build.log ERROR lines ====="; grep -inE "error:|fatal error|ld: |Undefined symbol|No such file|clang: error|ninja: error|CMake Error" build.log 2>/dev/null | tail -n 200
-            echo; echo "===== build.log (tail) ====="; tail -n 250 build.log 2>/dev/null
+            echo; echo "===== error / failure lines ====="
+            grep -inE "error:|error generated|fatal error|Undefined symbol|duplicate symbol|ld: error|linker command failed|clang.*: error|Command .* failed|PhaseScriptExecution|BUILD FAILED|following build commands failed|Killed: 9|Segmentation fault|out of memory|No such file or directory" build.log 2>/dev/null | tail -n 120
+            echo; echo "===== context around first failure ====="
+            L=$(grep -inE "error:|BUILD FAILED|Command .* failed|following build commands failed" build.log 2>/dev/null | head -1 | cut -d: -f1)
+            if [ -n "$L" ]; then S=$((L>80?L-80:1)); sed -n "${S},$((L+40))p" build.log; fi
+            echo; echo "===== build.log (last 200) ====="; tail -n 200 build.log 2>/dev/null
           } > failure-report.txt || true
           gh api -X PUT "repos/${{ github.repository }}/contents/ci-logs/run-${{ github.run_number }}-a${{ github.run_attempt }}.txt" \
             -f message="CI failure log (run ${{ github.run_id }})" \

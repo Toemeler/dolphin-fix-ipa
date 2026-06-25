@@ -58,12 +58,15 @@ jobs:
           echo "--- verify ---"
           grep -nA1 "GCSupportsControllerUserInteraction\|GCSupportsGameMode" dolphin/Source/iOS/App/DolphiniOS/Info.plist
 
-      - name: Patch core build flags (fmt consteval workaround for Xcode 26 clang)
+      - name: Patch bundled fmt for Xcode 26 clang (drop consteval)
         run: |
-          F=dolphin/Source/iOS/App/Project/Scripts/BuildCore.sh
-          grep -q -- '-DCMAKE_CXX_FLAGS="-fPIC"' "$F" || { echo "::error::BuildCore.sh anchor not found"; exit 1; }
-          sed -i.bak 's|-DCMAKE_CXX_FLAGS="-fPIC"|-DCMAKE_CXX_FLAGS="-fPIC -DFMT_USE_CONSTEVAL=0"|' "$F"
-          echo "patched core flags:"; grep -- CMAKE_CXX_FLAGS "$F"
+          C=dolphin/Externals/fmt/fmt/include/fmt/core.h
+          test -f "$C" || { echo "::error::fmt core.h not found at $C"; exit 1; }
+          n=$(grep -c 'define FMT_CONSTEVAL consteval' "$C" || echo 0)
+          echo "consteval defs found: $n"
+          [ "$n" = "1" ] || { echo "::error::expected exactly 1 consteval def, found $n"; exit 1; }
+          sed -i.bak 's/define FMT_CONSTEVAL consteval/define FMT_CONSTEVAL/' "$C"
+          echo '--- after ---'; grep -nE 'define FMT_CONSTEVAL' "$C"
 
       - name: Build DolphiniOS (NJB, unsigned)
         run: |

@@ -68,6 +68,15 @@ jobs:
           sed -i.bak 's/define FMT_CONSTEVAL consteval/define FMT_CONSTEVAL/' "$C"
           echo '--- after ---'; grep -nE 'define FMT_CONSTEVAL' "$C"
 
+      - name: Stub bartycrouch (localization tool, not needed to build)
+        run: |
+          for d in /opt/homebrew/bin /usr/local/bin; do
+            sudo mkdir -p "$d"
+            printf '#!/bin/bash\nexit 0\n' | sudo tee "$d/bartycrouch" >/dev/null
+            sudo chmod +x "$d/bartycrouch"
+          done
+          command -v bartycrouch && echo 'bartycrouch stub ready'
+
       - name: Build DolphiniOS (NJB, unsigned)
         run: |
           set -o pipefail

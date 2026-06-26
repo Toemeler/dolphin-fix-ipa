@@ -97,6 +97,10 @@ enabled) is possible — open an issue and it can be built.
 
 ---
 
+## Also fixed: DualShock 4 right-stick X inversion
+
+The DualShock 4 reports its **right-stick X axis inverted** through the iOS GameController framework (pushing right registers as negative). With the default mapping this made the C-Stick (the camera in many games, including Wind Waker) move the wrong way — right was left and vice-versa. This build flips that single axis **for DualShock controllers only**, in the `MFiController` backend, so the default mapping is correct and other controllers are unaffected.
+
 ## How it was diagnosed
 
 Rather than guess, a one-off **diagnostic build** instrumented `MFiController`
